@@ -18,26 +18,25 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Character length prompt
+// Character length 
 function generatePassword() {
   var characterLength = 0
   while ((characterLength < 8 || characterLength > 128) || Number.isInteger(characterLength) === 
 false) {
-  characterLength = parseInt(prompt(`How log would you like your password to be? (8 
-128)`));
+  characterLength = parseInt(prompt(`How long do you want your password to be?`));
   }
 
-  var upper = false
   var lower = false
-  var number = false
+  var upper = false
   var symbol = false
+  var number = false
 
   while (true) {
  
-    upper = window.confirm("Click OK to confirm uppercase characters");
     lower = window.confirm("Click OK to confirm lowercase characters");
-    number = window.confirm("Click OK to confirm numeric characters");
+    upper = window.confirm("Click OK to confirm uppercase characters");
     symbol = window.confirm("Click OK to confirm special characters (~!@#$%^&*()-_=+)");
+    number = window.confirm("Click OK to confirm numeric characters");
 
     break;
   }
@@ -62,5 +61,4 @@ false) {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
